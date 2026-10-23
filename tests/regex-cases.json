@@ -1,0 +1,450 @@
+[
+  {
+    "id": "TC-REGEX-NAME-01",
+    "field": "full_name",
+    "input": "Aditya Khawale",
+    "expected": true,
+    "remarks": "Typical valid name"
+  },
+  {
+    "id": "TC-REGEX-NAME-02",
+    "field": "full_name",
+    "input": "A",
+    "expected": false,
+    "remarks": "Below minimum length"
+  },
+  {
+    "id": "TC-REGEX-NAME-03",
+    "field": "full_name",
+    "input": "",
+    "expected": false,
+    "remarks": "Empty required field"
+  },
+  {
+    "id": "TC-REGEX-NAME-04",
+    "field": "full_name",
+    "input": "Jo",
+    "expected": true,
+    "remarks": "Minimum length"
+  },
+  {
+    "id": "TC-REGEX-NAME-05",
+    "field": "full_name",
+    "input": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "expected": true,
+    "remarks": "Maximum length boundary"
+  },
+  {
+    "id": "TC-REGEX-NAME-06",
+    "field": "full_name",
+    "input": "Riya@Patel",
+    "expected": false,
+    "remarks": "Prohibited symbol"
+  },
+  {
+    "id": "TC-REGEX-NAME-07",
+    "field": "full_name",
+    "input": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy",
+    "expected": false,
+    "remarks": "51 characters, exceeds maximum"
+  },
+  {
+    "id": "TC-REGEX-NAME-08",
+    "field": "full_name",
+    "input": "<b>Riya</b>",
+    "expected": false,
+    "remarks": "Markup rejected"
+  },
+  {
+    "id": "TC-REGEX-USERNAME-01",
+    "field": "username",
+    "input": "aditya_01",
+    "expected": true,
+    "remarks": "Typical valid username"
+  },
+  {
+    "id": "TC-REGEX-USERNAME-02",
+    "field": "username",
+    "input": "ab!",
+    "expected": false,
+    "remarks": "Too short and prohibited symbol"
+  },
+  {
+    "id": "TC-REGEX-USERNAME-03",
+    "field": "username",
+    "input": "",
+    "expected": false,
+    "remarks": "Empty required field"
+  },
+  {
+    "id": "TC-REGEX-USERNAME-04",
+    "field": "username",
+    "input": "A123",
+    "expected": true,
+    "remarks": "Minimum length"
+  },
+  {
+    "id": "TC-REGEX-USERNAME-05",
+    "field": "username",
+    "input": "A123456789012345",
+    "expected": true,
+    "remarks": "Maximum length boundary"
+  },
+  {
+    "id": "TC-REGEX-USERNAME-06",
+    "field": "username",
+    "input": "_riya",
+    "expected": false,
+    "remarks": "Must start with a letter"
+  },
+  {
+    "id": "TC-REGEX-USERNAME-07",
+    "field": "username",
+    "input": "riya patel",
+    "expected": false,
+    "remarks": "Whitespace rejected"
+  },
+  {
+    "id": "TC-REGEX-USERNAME-08",
+    "field": "username",
+    "input": "A1234567890123456",
+    "expected": false,
+    "remarks": "17 characters, exceeds maximum"
+  },
+  {
+    "id": "TC-REGEX-EMAIL-01",
+    "field": "email",
+    "input": "user@example.com",
+    "expected": true,
+    "remarks": "Typical valid email"
+  },
+  {
+    "id": "TC-REGEX-EMAIL-02",
+    "field": "email",
+    "input": "user@domain",
+    "expected": false,
+    "remarks": "Missing top-level domain"
+  },
+  {
+    "id": "TC-REGEX-EMAIL-03",
+    "field": "email",
+    "input": "",
+    "expected": false,
+    "remarks": "Empty required field"
+  },
+  {
+    "id": "TC-REGEX-EMAIL-04",
+    "field": "email",
+    "input": "a@b.co",
+    "expected": true,
+    "remarks": "Short valid address"
+  },
+  {
+    "id": "TC-REGEX-EMAIL-05",
+    "field": "email",
+    "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc.ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "expected": true,
+    "remarks": "254-character maximum boundary"
+  },
+  {
+    "id": "TC-REGEX-EMAIL-06",
+    "field": "email",
+    "input": "a b@example.com",
+    "expected": false,
+    "remarks": "Whitespace rejected"
+  },
+  {
+    "id": "TC-REGEX-EMAIL-07",
+    "field": "email",
+    "input": "user@@example.com",
+    "expected": false,
+    "remarks": "Malformed duplicate at sign"
+  },
+  {
+    "id": "TC-REGEX-EMAIL-08",
+    "field": "email",
+    "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@example.com",
+    "expected": false,
+    "remarks": "Exceeds email maximum"
+  },
+  {
+    "id": "TC-REGEX-PASSWORD-01",
+    "field": "password",
+    "input": "SecurePass123!",
+    "expected": true,
+    "remarks": "All required character classes"
+  },
+  {
+    "id": "TC-REGEX-PASSWORD-02",
+    "field": "password",
+    "input": "weakpass",
+    "expected": false,
+    "remarks": "Missing required character classes"
+  },
+  {
+    "id": "TC-REGEX-PASSWORD-03",
+    "field": "password",
+    "input": "",
+    "expected": false,
+    "remarks": "Empty required field"
+  },
+  {
+    "id": "TC-REGEX-PASSWORD-04",
+    "field": "password",
+    "input": "Aa1!bcde",
+    "expected": true,
+    "remarks": "Minimum length and all classes"
+  },
+  {
+    "id": "TC-REGEX-PASSWORD-05",
+    "field": "password",
+    "input": "Aa1!xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "expected": false,
+    "remarks": "Exceeds 128 character limit"
+  },
+  {
+    "id": "TC-REGEX-PASSWORD-06",
+    "field": "password",
+    "input": "Password123",
+    "expected": false,
+    "remarks": "Missing symbol"
+  },
+  {
+    "id": "TC-REGEX-PASSWORD-07",
+    "field": "password",
+    "input": "PASSWORD1!",
+    "expected": false,
+    "remarks": "Missing lowercase"
+  },
+  {
+    "id": "TC-REGEX-PASSWORD-08",
+    "field": "password",
+    "input": "Pass@abc",
+    "expected": false,
+    "remarks": "Missing digit"
+  },
+  {
+    "id": "TC-REGEX-PHONE-01",
+    "field": "phone",
+    "input": "9876543210",
+    "expected": true,
+    "remarks": "Typical Indian mobile"
+  },
+  {
+    "id": "TC-REGEX-PHONE-02",
+    "field": "phone",
+    "input": "5123456789",
+    "expected": false,
+    "remarks": "First digit below allowed range"
+  },
+  {
+    "id": "TC-REGEX-PHONE-03",
+    "field": "phone",
+    "input": "",
+    "expected": false,
+    "remarks": "Empty required field"
+  },
+  {
+    "id": "TC-REGEX-PHONE-04",
+    "field": "phone",
+    "input": "6000000000",
+    "expected": true,
+    "remarks": "Lowest allowed first digit"
+  },
+  {
+    "id": "TC-REGEX-PHONE-05",
+    "field": "phone",
+    "input": "98765432101",
+    "expected": false,
+    "remarks": "11 digits"
+  },
+  {
+    "id": "TC-REGEX-PHONE-06",
+    "field": "phone",
+    "input": "98765-3210",
+    "expected": false,
+    "remarks": "Punctuation rejected"
+  },
+  {
+    "id": "TC-REGEX-PHONE-07",
+    "field": "phone",
+    "input": "98765432ab",
+    "expected": false,
+    "remarks": "Letters rejected"
+  },
+  {
+    "id": "TC-REGEX-PHONE-08",
+    "field": "phone",
+    "input": "+919876543210",
+    "expected": false,
+    "remarks": "Country prefix outside 10-digit rule"
+  },
+  {
+    "id": "TC-REGEX-AGE-01",
+    "field": "age",
+    "input": "25",
+    "expected": true,
+    "remarks": "Typical valid age"
+  },
+  {
+    "id": "TC-REGEX-AGE-02",
+    "field": "age",
+    "input": "0",
+    "expected": false,
+    "remarks": "Below minimum"
+  },
+  {
+    "id": "TC-REGEX-AGE-03",
+    "field": "age",
+    "input": "",
+    "expected": false,
+    "remarks": "Empty required field"
+  },
+  {
+    "id": "TC-REGEX-AGE-04",
+    "field": "age",
+    "input": "1",
+    "expected": true,
+    "remarks": "Minimum allowed age"
+  },
+  {
+    "id": "TC-REGEX-AGE-05",
+    "field": "age",
+    "input": "120",
+    "expected": true,
+    "remarks": "Maximum allowed age"
+  },
+  {
+    "id": "TC-REGEX-AGE-06",
+    "field": "age",
+    "input": "-25",
+    "expected": false,
+    "remarks": "Negative value rejected"
+  },
+  {
+    "id": "TC-REGEX-AGE-07",
+    "field": "age",
+    "input": "25.5",
+    "expected": false,
+    "remarks": "Decimal rejected"
+  },
+  {
+    "id": "TC-REGEX-AGE-08",
+    "field": "age",
+    "input": "121",
+    "expected": false,
+    "remarks": "Exceeds maximum"
+  },
+  {
+    "id": "TC-REGEX-CITY-01",
+    "field": "city",
+    "input": "Pune",
+    "expected": true,
+    "remarks": "Typical valid city"
+  },
+  {
+    "id": "TC-REGEX-CITY-02",
+    "field": "city",
+    "input": "New York",
+    "expected": true,
+    "remarks": "Internal space accepted"
+  },
+  {
+    "id": "TC-REGEX-CITY-03",
+    "field": "city",
+    "input": "",
+    "expected": false,
+    "remarks": "Empty required field"
+  },
+  {
+    "id": "TC-REGEX-CITY-04",
+    "field": "city",
+    "input": "LA",
+    "expected": true,
+    "remarks": "Minimum length"
+  },
+  {
+    "id": "TC-REGEX-CITY-05",
+    "field": "city",
+    "input": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "expected": true,
+    "remarks": "Maximum length boundary"
+  },
+  {
+    "id": "TC-REGEX-CITY-06",
+    "field": "city",
+    "input": "New-Town",
+    "expected": false,
+    "remarks": "Hyphen not in city rule"
+  },
+  {
+    "id": "TC-REGEX-CITY-07",
+    "field": "city",
+    "input": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "expected": false,
+    "remarks": "41 characters, exceeds maximum"
+  },
+  {
+    "id": "TC-REGEX-CITY-08",
+    "field": "city",
+    "input": "City@1",
+    "expected": false,
+    "remarks": "Symbols and digits rejected"
+  },
+  {
+    "id": "TC-REGEX-COMMENT-01",
+    "field": "comment",
+    "input": "Stay informed and take care.",
+    "expected": true,
+    "remarks": "Typical valid comment"
+  },
+  {
+    "id": "TC-REGEX-COMMENT-02",
+    "field": "comment",
+    "input": "<script>alert(1)</script>",
+    "expected": false,
+    "remarks": "Script markup rejected"
+  },
+  {
+    "id": "TC-REGEX-COMMENT-03",
+    "field": "comment",
+    "input": "",
+    "expected": false,
+    "remarks": "Empty required field"
+  },
+  {
+    "id": "TC-REGEX-COMMENT-04",
+    "field": "comment",
+    "input": "A",
+    "expected": true,
+    "remarks": "Minimum length"
+  },
+  {
+    "id": "TC-REGEX-COMMENT-05",
+    "field": "comment",
+    "input": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "expected": true,
+    "remarks": "Maximum length"
+  },
+  {
+    "id": "TC-REGEX-COMMENT-06",
+    "field": "comment",
+    "input": "<b>bold</b>",
+    "expected": false,
+    "remarks": "HTML tags rejected"
+  },
+  {
+    "id": "TC-REGEX-COMMENT-07",
+    "field": "comment",
+    "input": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "expected": false,
+    "remarks": "Exceeds maximum length"
+  },
+  {
+    "id": "TC-REGEX-COMMENT-08",
+    "field": "comment",
+    "input": "   ",
+    "expected": false,
+    "remarks": "Whitespace-only comment rejected"
+  }
+]
