@@ -1,4 +1,8 @@
-﻿# COVID-19 Information Website
+
+ <img width="2972" height="1726" alt="image" src="https://github.com/user-attachments/assets/89f24ad6-31d9-4717-843c-3675bdbb7343" />
+
+ 
+ # COVID-19 Information Website
 
 An academic STQA mini-project implementation using PHP 8.2+, MySQL/MariaDB, HTML, CSS and vanilla JavaScript. The website includes registration, login, a dashboard, country data, COVID-19 information, vaccination status records and a comments area.
 
